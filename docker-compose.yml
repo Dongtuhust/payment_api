@@ -1,0 +1,18 @@
+version: '3'
+  
+services:
+  mysql:
+    image: payment-mysql:v1
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_DATABASE: payment_db
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - "3309:3306"
+  payment-api:
+    image: payment-api:v1
+    depends_on:
+      - mysql
+    ports:
+- "8084:80"
