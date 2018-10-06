@@ -60,7 +60,7 @@ if($num>0){
  
     // include paging
     $total_rows=$order->count();
-    $page_url="{$home_url}order/readPaging.php?";
+    $page_url="{$home_url}orders/readPaging.php?";
     $paging=$utilities->getPaging($page, $total_rows, $records_per_page, $page_url);
     $orders_arr["paging"]=$paging;
  

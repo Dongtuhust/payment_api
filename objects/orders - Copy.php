@@ -223,7 +223,7 @@ class Order{
         // select query
         $query = "SELECT
                    *
-                FROM  $this->table_name LIMIT ?, ?";
+                FROM  $this->table_name ";
      
         // prepare query statement
         $stmt = $this->conn->prepare( $query );
