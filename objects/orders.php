@@ -43,9 +43,7 @@ class Order{
     function create(){
      
         // query to insert record
-        $query = "INSERT INTO " . $this->table_name . " SET
-                    customer_name=:customer_name, status=:status, total_money=:total_money, customer_add=:customer_add,customer_phone=:customer_phone,gender:=gender,note=:note, order_date=:order_date,payment:=payment";
-     
+        $query = "INSERT INTO " . $this->table_name . "(customer_name,status,total_money,customer_add,customer_phone,gender,note,order_date,payment) values (:customer_name,:status,:total_money,:customer_add,:customer_phone,:gender,:note,:order_date,:payment) ";
         // prepare query
         $stmt = $this->conn->prepare($query);
      
